@@ -116,13 +116,21 @@
 
 
 # This function only prints
-def add_print(a, b):
-    print(a + b)
+# def add_print(a, b):
+#     print(a + b)
 
-# This function returns a value
-def add_return(a, b):
-    return a + b
+# # This function returns a value
+# def add_return(a, b):
+#     return a + b
 
-# Now you can use the result
-result = add_return(5, 3)
-print(f"The result is {result}")  # The result is 8
+# # Now you can use the result
+# result = add_return(5, 3)
+# print(f"The result is {result}")  # The result is 8
+
+def calculate_area(width, height):
+    area = width * height
+    return area
+
+# Store the returned value
+room_area = calculate_area(10, 12)
+print(f"Room size: {room_area} sq ft")  # Room size: 120 sq ft
