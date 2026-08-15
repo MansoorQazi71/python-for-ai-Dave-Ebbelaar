@@ -127,10 +127,27 @@
 # result = add_return(5, 3)
 # print(f"The result is {result}")  # The result is 8
 
-def calculate_area(width, height):
-    area = width * height
-    return area
+# def calculate_area(width, height):
+#     area = width * height
+#     return area
 
-# Store the returned value
-room_area = calculate_area(10, 12)
-print(f"Room size: {room_area} sq ft")  # Room size: 120 sq ft
+# # Store the returned value
+# room_area = calculate_area(10, 12)
+# print(f"Room size: {room_area} sq ft")  # Room size: 120 sq ft
+
+
+def double(number):
+    return number * 2
+
+# Store in variable
+result = double(5)
+
+# Use in expressions
+total = double(5) + double(3)  # 10 + 6 = 16
+
+# Pass to other functions
+print(double(10))  # 20
+
+# Use in conditions
+if double(7) > 10:
+    print("Big number!")
