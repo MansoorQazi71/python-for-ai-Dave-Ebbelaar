@@ -155,13 +155,29 @@ result = double(5)
 # Returning multiple values
 # Python can return multiple values as a tuple:
 
-def get_min_max(numbers):
-    return min(numbers), max(numbers)
+# def get_min_max(numbers):
+#     return min(numbers), max(numbers)
 
-# Get both values
-minimum, maximum = get_min_max([5, 2, 8, 1, 9])
-print(f"Min: {minimum}, Max: {maximum}")  # Min: 1, Max: 9
+# # Get both values
+# minimum, maximum = get_min_max([5, 2, 8, 1, 9])
+# print(f"Min: {minimum}, Max: {maximum}")  # Min: 1, Max: 9
 
-# Or as a tuple
-result = get_min_max([5, 2, 8, 1, 9])
-print(result)  # (1, 9)
+# # Or as a tuple
+# result = get_min_max([5, 2, 8, 1, 9])
+# print(result)  # (1, 9)
+
+# packages
+# Date and time
+import datetime
+today = datetime.date.today()
+print(today)  # 2024-01-15
+
+# Operating system
+import os
+current_dir = os.getcwd()
+print(current_dir)
+
+# JSON data
+import json
+data = {"name": "Alice", "age": 30}
+json_string = json.dumps(data)
