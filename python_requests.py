@@ -143,11 +143,42 @@ def double(number):
 result = double(5)
 
 # Use in expressions
-total = double(5) + double(3)  # 10 + 6 = 16
+# total = double(5) + double(3)  # 10 + 6 = 16
 
-# Pass to other functions
-print(double(10))  # 20
+# # Pass to other functions
+# print(double(10))  # 20
 
-# Use in conditions
-if double(7) > 10:
-    print("Big number!")
+# # Use in conditions
+# if double(7) > 10:
+#     print("Big number!")
+
+# Returning multiple values
+# Python can return multiple values as a tuple:
+
+# def get_min_max(numbers):
+#     return min(numbers), max(numbers)
+
+# # Get both values
+# minimum, maximum = get_min_max([5, 2, 8, 1, 9])
+# print(f"Min: {minimum}, Max: {maximum}")  # Min: 1, Max: 9
+
+# # Or as a tuple
+# result = get_min_max([5, 2, 8, 1, 9])
+# print(result)  # (1, 9)
+
+# packages
+# Date and time
+import datetime
+today = datetime.date.today()
+print(today)  # 2024-01-15
+
+# Operating system
+import os
+current_dir = os.getcwd()
+print(current_dir)
+
+# JSON data
+import json
+data = {"name": "Alice", "age": 30}
+json_string = json.dumps(data)
+print(json_string)  # {"name": "Alice", "age": 30}
