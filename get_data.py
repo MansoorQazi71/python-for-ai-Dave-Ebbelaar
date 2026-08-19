@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 from datetime import datetime, timedelta
 
 # Calculate dates
@@ -56,4 +57,14 @@ plt.tight_layout()
 
 # Save the plot
 plt.savefig('weather_chart.png')
-plt.show()
+# plt.show()
+
+# saving the dataframe to a csv file
+
+# Create data folder if it doesn't exist
+if not os.path.exists('data'):
+    os.makedirs('data')
+
+# Save to CSV
+df.to_csv('data/paris_weather.csv', index=False)
+print("Data saved to data/paris_weather.csv")
