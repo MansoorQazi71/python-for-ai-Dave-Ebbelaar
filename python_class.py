@@ -1,32 +1,28 @@
-class DataValidator:
-    def __init__(self):
-        self.errors = []
+# Parent class - general animal
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
     
-    def validate_email(self, email):
-        if "@" not in email:
-            self.errors.append(f"Invalid email: {email}")
-            return False
-        return True
+    def eat(self):
+        return f"{self.name} is {self.age} years old and is eating"
     
-    def validate_age(self, age):
-        if age < 0 or age > 150:
-            self.errors.append(f"Invalid age: {age}")
-            return False
-        return True
-    
-    def get_errors(self):
-        return self.errors
+    def sleep(self):
+        return f"{self.name} is sleeping"
 
-# Use the validator
-validator = DataValidator()
+# Child class - specific animal
+class Dog(Animal):
+    def bark(self):
+        return f"{self.name} says woof!"
 
-# Notice: we don't pass self, just the email
-validator.validate_email(email="bad-email")
-validator.validate_age(age=200)
+# Create a dog - using positional argument
+my_dog = Dog("Buddy" , "4")
+# Or with named argument
+my_dog2 = Dog(name="Max", age="5")
 
-# Or using positional arguments
-validator.validate_email("another-bad-email")
-validator.validate_age(150)
+# Dog can do animal things (inherited)
+print(my_dog.eat())    # Buddy is eating
+print(my_dog.sleep())  # Buddy is sleeping
 
-print(validator.get_errors())
-# ['Invalid email: bad-email', 'Invalid age: 200', 'Invalid email: another-bad-email']
+# Dog can also do dog things
+print(my_dog.bark())   # Buddy says woof!
