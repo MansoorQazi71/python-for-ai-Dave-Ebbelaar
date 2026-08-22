@@ -1,14 +1,32 @@
-class Dog:
-    def __init__(self, name, breed):
-        self.name = name
-        self.breed = breed
+class DataValidator:
+    def __init__(self):
+        self.errors = []
+    
+    def validate_email(self, email):
+        if "@" not in email:
+            self.errors.append(f"Invalid email: {email}")
+            return False
+        return True
+    
+    def validate_age(self, age):
+        if age < 0 or age > 150:
+            self.errors.append(f"Invalid age: {age}")
+            return False
+        return True
+    
+    def get_errors(self):
+        return self.errors
 
-# Create dog objects - using positional arguments
-dog1 = Dog("Buddy", "Golden Retriever")
-dog2 = Dog("Max", "Beagle")
+# Use the validator
+validator = DataValidator()
 
-# Or with named arguments (clearer)
-dog3 = Dog(name="Charlie", breed="Poodle")
+# Notice: we don't pass self, just the email
+validator.validate_email(email="bad-email")
+validator.validate_age(age=200)
 
-print(dog1.name)   # Buddy
-print(dog2.breed)  # Beagle
+# Or using positional arguments
+validator.validate_email("another-bad-email")
+validator.validate_age(150)
+
+print(validator.get_errors())
+# ['Invalid email: bad-email', 'Invalid age: 200', 'Invalid email: another-bad-email']
