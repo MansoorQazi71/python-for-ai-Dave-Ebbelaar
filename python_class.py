@@ -1,14 +1,28 @@
-class Dog:
-    def __init__(self, name, breed):
+# Parent class - general animal
+class Animal:
+    def __init__(self, name, age):
         self.name = name
-        self.breed = breed
+        self.age = age
+    
+    def eat(self):
+        return f"{self.name} is {self.age} years old and is eating"
+    
+    def sleep(self):
+        return f"{self.name} is sleeping"
 
-# Create dog objects - using positional arguments
-dog1 = Dog("Buddy", "Golden Retriever")
-dog2 = Dog("Max", "Beagle")
+# Child class - specific animal
+class Dog(Animal):
+    def bark(self):
+        return f"{self.name} says woof!"
 
-# Or with named arguments (clearer)
-dog3 = Dog(name="Charlie", breed="Poodle")
+# Create a dog - using positional argument
+my_dog = Dog("Buddy" , "4")
+# Or with named argument
+my_dog2 = Dog(name="Max", age="5")
 
-print(dog1.name)   # Buddy
-print(dog2.breed)  # Beagle
+# Dog can do animal things (inherited)
+print(my_dog.eat())    # Buddy is eating
+print(my_dog.sleep())  # Buddy is sleeping
+
+# Dog can also do dog things
+print(my_dog.bark())   # Buddy says woof!
